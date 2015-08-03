@@ -8,4 +8,6 @@ url = "https://www.airbnb.co.uk/s/london"
 page = Nokogiri::HTML(open(url))
 
 # Display output onto the screen
-puts page
+page.css('h3.h5.listing-name').each do |line|
+  puts line.text
+end
